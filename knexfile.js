@@ -1,5 +1,5 @@
+/* in file untuk mebuat file migration dengan knex libraries */
 // Update with your config settings.
-
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */

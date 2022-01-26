@@ -1,3 +1,5 @@
+// Ini untuk connect ke database
+
 const knex = require('knex')({
     client: 'mysql',
     connection: {
