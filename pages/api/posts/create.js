@@ -1,6 +1,7 @@
 import db from '../../../libs/db';
 
 /* Function in methode nya asyncronus */
+/* Ini untuk create data use Post di postman */
 export default async function handler(req, res) {
     if(req.method !== 'POST') return res.status(405).end();
     // console.log(req.body);
