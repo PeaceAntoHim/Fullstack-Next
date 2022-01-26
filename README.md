@@ -48,6 +48,9 @@ first you have to write "npm install" to install all libraries. then you can see
   2 https://github.com/mysqljs/mysql
 
 
+You can check all dependencies in packages.json
+
+
 
 
 
