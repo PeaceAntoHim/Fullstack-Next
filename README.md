@@ -32,3 +32,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Controlflow work
+if you want to create app with next you hava install and create folder app development with write "npx create-next-app your-example-app", before that you have learn basic react and ecmascript 7, node js to get easy when u developing with this framework. than i install libraries for get route and made seed and migrations at my app.
+
+
+
+
+
+## How to install and work in your pc
+
+first you have to write "npm install" to install all libraries. then you can see that libraries i use in this link
+  1 https://knexjs.org/ or in github https://github.com/knex/knex
+  2 https://github.com/mysqljs/mysql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
