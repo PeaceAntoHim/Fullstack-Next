@@ -33,6 +33,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Fullstact-next
+
+ If you want to create this project you have to install yarn in your pc. after clone this file write "npm install".
+ if you want to to made CRUD with next and use mysql for dbms you have to install mysql and create new schema for your project after that you have to connect to mysql.
+ you can see in this link https://github.com/mysqljs/mysql
+
+        1.install liberries dependency in https://github.com/mysqljs/mysql
+        1.install liberries dependency in https://knexjs.org/
+
 
 ## Controlflow work
 if you want to create app with next you hava install and create folder app development with write "npx create-next-app your-example-app", before that you have learn basic react and ecmascript 7, node js to get easy when u developing with this framework. than i install libraries for get route and made seed and migrations at my app.
