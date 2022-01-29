@@ -1,26 +1,16 @@
-import jwt from 'jsonwebtoken';
-import authorization from '../../../middlewares/authorization';
+import db from '../../../libs/db';
+import authorization from '../../../libs/authorization';
 
-export default function Authorization(req, res) {
+export default async function handler(req, res) {
+    if(req.method !== 'GET') return res.status(405).end('');
 
-    if(req.method !== 'GET') return res.status(405).end();
+    const auth = await authorization(req, res);
 
-    const { authorization } = req.headers;
-    // console.log(req.headers);
-    
-    if(!authorization) return res.status(401).end();
+    const auth = await db('posts');
 
-    /* Distructuring Object */
-    const authSplit = authorization.split(' ');
-    // console.log(authSplit)
-    const [authType, authToken] = [
-        authSplit[0],
-        authSplit[1]
-    ]
-
-    if(authType !== 'Bearer') return res.status(401).end();
-
-    const verify = jwt.verify(authToken, 'greatGod');
-
-
+    res.status(200);
+    res.json({
+        message: 'Posts fetched successfully',
+        data: posts
+    });
 }

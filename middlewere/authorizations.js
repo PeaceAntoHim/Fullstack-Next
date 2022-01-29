@@ -1,17 +1,24 @@
-import db from '../../../libs/db';
 import jwt from 'jsonwebtoken';
 
-/* ini untuk Read data use get in Postman  */
+export default function authorization(req, res) {
+    return new Promise((resolve, reject) => {
+        const { authorization } = req.headers;  
+        
+        if(!authorization) return res.status(401).end();
 
-/* Contoh middleware */
-export default async function hendler(req, res) {
-   
-        const posts = await db('posts');
-    
-        res.status(200);
-        res.json({
-            message: 'Posts data',
-            data: posts
+        const authSplit = authorization.split(' '); 
+        const [authType, authToken] = [
+            authSplit[0],
+            authSplit[1]
+        ]
+
+        if(authType !=='Bearer') return res.status(401).end();
+
+        return jwt.verify(authToken, 'Greate God', function(err, decoded) {
+            if(err) return res(401).end();
+
+            return resolve(decoded);
         });
+    ));
 }
 
