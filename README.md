@@ -21,6 +21,7 @@ if you want to create app with next you hava install and create folder app devel
 first you have to write "npm install" to install all libraries. then you can see that libraries i use in this link
   1 https://knexjs.org/ or in github https://github.com/knex/knex
   2 https://github.com/mysqljs/mysql
+  3 https://www.npmjs.com/package/js-cookie
 
 
 You can check all dependencies in packages.json

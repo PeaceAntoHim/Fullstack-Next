@@ -7,9 +7,12 @@ export default function Register() {
         password: ''
     });
 
+    const [status, setStatus] = useState('normal');
     
     async function registerHandler(e) {
         /* e.preventDefault itu adalah unutk mencegah fungsi bawaan dari broeser pergi ke action atau mencegah relod */
+        setStatus('loading...');
+
         e.preventDefault();
         // console.log(feilds);
     
@@ -22,8 +25,12 @@ export default function Register() {
             }
         });
 
+        if(!registerReq.ok) return setStatus('error' + registerReq.status)
+
         const registerRes = await registerReq.json();
-        console.log(registerRes);
+        // console.log(registerRes);
+
+        setStatus('success');   
     }
     
     function feildHandler(e) {
@@ -47,6 +54,8 @@ export default function Register() {
                 <button type="submit">
                     Register
                 </button>
+
+                <div>Output: {status}</div>
             </form>
         </div>
     );
