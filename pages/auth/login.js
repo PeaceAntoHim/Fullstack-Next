@@ -7,9 +7,15 @@ export async function getServerSideProps(ctx) {
     // console.log(context.req.headers);
     const allCookies = cookies(ctx);
 
-    console.log(allCookies);
+    // console.log(allCookies);
+    console.log(allCookies.token);
+    if(allCookies.token)
+        return ctx.res.writeHead(302, {
+            Location: '/posts'
+        });
+        res.end();
 
-    return { props: {} } 
+    return { props: {} }
 }
 
 
