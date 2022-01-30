@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Cookie from 'js-cookie';
+import Router from 'next/router';
 
 export default function Login() {
 
@@ -9,6 +10,17 @@ export default function Login() {
     });
 
     const [status, setStatus] = useState('normal');
+
+    /* set session login*/
+    useEffect(() => {
+        // console.log('update');
+        const token = Cookie.get('token');
+
+        // console.log(token);
+        /* Cek jika token sudah di pakai maka */
+        if(token) return Router.push('/posts');
+    }, []);
+
 
     async function loginHandler(e) {
         e.preventDefault();
@@ -31,6 +43,9 @@ export default function Login() {
         setStatus('Success');
         // console.log(loginRes);\
         Cookie.set('token', loginRes.token);
+
+        /* Use Router to access posts page */
+        Router.push('/posts');
     }
 
     function fieldHandler(e) {
