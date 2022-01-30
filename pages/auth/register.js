@@ -1,4 +1,13 @@
 import React, { useState } from 'react';
+import { unauthPage } from '../../middlewares/authorizationPage';
+
+export async function getServerSideProps(ctx) {
+    await unauthPage(ctx);
+    // console.log(context.req.headers);
+    // console.log(allCookies);
+    // console.log(allCookies.token);  
+    return { props: {} }
+}
 
 export default function Register() {
     /* use React state */

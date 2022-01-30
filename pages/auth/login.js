@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
-import cookies from 'next-cookies';
+import { unauthPage } from '../../middlewares/authorizationPage';
 
 export async function getServerSideProps(ctx) {
+    await unauthPage(ctx);
     // console.log(context.req.headers);
-    const allCookies = cookies(ctx);
-
     // console.log(allCookies);
-    console.log(allCookies.token);
-    if(allCookies.token)
-        return ctx.res.writeHead(302, {
-            Location: '/posts'
-        });
-        res.end();
-
+    // console.log(allCookies.token);  
     return { props: {} }
 }
 
 
 export default function Login() {
-
     const [fields, setFields] = useState({
         email: '',
         password: ''
