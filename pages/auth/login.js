@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
+import cookies from 'next-cookies';
+
+export async function getServerSideProps(ctx) {
+    // console.log(context.req.headers);
+    const allCookies = cookies(ctx);
+
+    console.log(allCookies);
+
+    return { props: {} } 
+}
+
 
 export default function Login() {
 
@@ -12,15 +23,14 @@ export default function Login() {
     const [status, setStatus] = useState('normal');
 
     /* set session login*/
-    useEffect(() => {
-        // console.log('update');
+  /*   useEffect(() => {
+        console.log('update');
         const token = Cookie.get('token');
 
-        // console.log(token);
+         console.log(token);
         /* Cek jika token sudah di pakai maka */
-        if(token) return Router.push('/posts');
-    }, []);
-
+    /*     if(token) return Router.push('/posts');
+    }, []); */
 
     async function loginHandler(e) {
         e.preventDefault();

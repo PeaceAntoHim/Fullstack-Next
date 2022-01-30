@@ -22,6 +22,7 @@ first you have to write "npm install" to install all libraries. then you can see
   1 https://knexjs.org/ or in github https://github.com/knex/knex
   2 https://github.com/mysqljs/mysql
   3 https://www.npmjs.com/package/js-cookie
+  4 https://www.npmjs.com/package/next-cookies
 
 
 You can check all dependencies in packages.json
