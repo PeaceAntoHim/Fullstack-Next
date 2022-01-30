@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Register() {
     /* use React state */
-    const [feilds, setFeilds] = useState({
+    const [fields, setFeilds] = useState({
         email: '',
         password: ''
     });
@@ -16,7 +16,10 @@ export default function Register() {
         /* Hit to register api */
         const registerReq = await fetch('/api/auth/register', {
             method: 'POST',
-            body: JSON.stringify(feilds)
+            body: JSON.stringify(fields),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
 
         const registerRes = await registerReq.json();
@@ -28,7 +31,7 @@ export default function Register() {
         const name = e.target.getAttribute('name');
 
         setFeilds({
-            ...feilds,
+            ...fields,
             [name]: e.target.value
         });
     }

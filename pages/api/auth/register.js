@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 
 export default async function handler(req, res) {
     if(req.method !== 'POST') return res.status(405).end();
+    // console.log(req.body);
 
     /* distrukturing */
     const { email, password } = req.body;
